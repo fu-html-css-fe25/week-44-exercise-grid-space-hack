@@ -1,0 +1,253 @@
+/* BASE */
+:root {
+    --black-purple: #2E2D31;
+    --darkest-purple: #220B5E;
+    --dark-purple: #3B1D98;
+    --purple: #513779;
+    --light-purple: #7654B4;
+    --lightest-purple: #967ECB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* GENERIC */
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, button {
+    font-family: 'Inconsolata', monospace;
+}
+
+.box-image {
+    width: 70%;
+}
+
+/* COLOR UTILITY CLASSES */
+
+.bg-black-purple {
+    background-color: var(--black-purple);
+}
+
+.bg-darkest-purple {
+    background-color: var(--darkest-purple);
+}
+
+.bg-dark-purple {
+    background-color: var(--dark-purple);
+}
+
+.bg-purple {
+    background-color: var(--purple);
+}
+
+.bg-light-purple {
+    background-color: var(--light-purple);
+}
+
+.bg-lightest-purple {
+    background-color: var(--lightest-purple);
+}
+
+.text-light {
+    color: white;
+}
+
+/* HEADER */
+
+.page-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    
+    .header-title {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    
+    .header-box-large {
+        grid-column: auto / span 2;
+        grid-row: auto / span 2;
+    }
+}
+
+/* Boxes */
+
+.box {
+    grid-column: auto / span 1;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    
+    .box-image {
+        width: 60%;
+    }
+}
+
+.box-large {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+}
+
+.box-wide {
+    grid-column: auto / span 2;
+    aspect-ratio: 2 / 1;
+    order: 1;
+}
+
+
+/* HERO */
+
+.hero-section {
+    width: 100%;
+    height: 700px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+
+    ::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(21, 7, 56, 0.5);
+        z-index: -1;
+    }
+
+    .hero-image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .hero-title {
+        z-index: 2;
+        font-size: 6rem;
+        color: white;
+    }
+}
+
+/* MAIN */
+
+.main-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    .main-title {
+        font-weight: 2.5rem;
+    }
+}
+
+/* CONTACT */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #fff;
+
+    .contact-intro {
+        display: grid;
+        place-content: center;
+        padding: 2rem 3rem;
+        gap: 1rem;
+        
+        .contact-title {
+            font-size: 3.5rem;
+            text-align: center;
+        }
+
+        .contact-text {
+            letter-spacing: 2px;
+            line-height: 1.5rem;
+        }
+    }
+
+    .contact-form {
+        padding: 4rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        .contact-input {
+            padding: 1rem;
+            grid-column: auto / span 3;
+        }
+        
+        .contact-textarea {
+            aspect-ratio: 3 / 1;
+            grid-column: auto / span 3;
+        }
+        
+        .contact-btn {
+            border: none;
+            padding: 1rem 2rem;
+            align-self: end;
+            grid-column: 3 / 4;
+            text-transform: uppercase;
+            background-color: var(--purple);
+            border: 2px solid var(--light-purple);
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-btn:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+
+/* FOOTER */
+
+.page-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 6rem 4rem;
+    gap: 2rem;
+    
+    .footer-title {
+        text-align: center;
+        grid-column: auto / span 4;
+        font-size: 2rem;
+        
+    }
+    .footer-article {
+        color: #fff;
+        grid-column: auto / span 1;
+        display: grid;
+        gap: .5rem;
+
+        .footer-subtitle {
+            font-size: 1.5rem;
+        }
+
+        .footer-text {
+            font-size: 1.25rem;
+        }
+    }
+}
